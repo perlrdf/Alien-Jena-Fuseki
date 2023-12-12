@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: perlrdf/devops/github-actions/irc-notifications@main
         with:
-          target-notifications: false
+          target-notifications: true
   dist:
     if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' }}
     name: Make distribution
@@ -153,5 +153,5 @@ jobs:
     steps:
       - uses: perlrdf/devops/github-actions/irc-notifications@main
         with:
-          target-build-status: false
+          target-build-status: true
           needs: ${{ toJSON(needs) }}
