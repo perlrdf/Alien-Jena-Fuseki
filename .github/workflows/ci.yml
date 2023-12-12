@@ -99,6 +99,12 @@ jobs:
         run: |
           pacman -S --needed --noconfirm ${{ env.PKG_MSYS2_MINGW64 }}
 
+      # Setup Java
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
       # Setup Perl
       - name: Set up perl
         uses: shogo82148/actions-setup-perl@v1
